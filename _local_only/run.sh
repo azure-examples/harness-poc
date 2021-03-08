@@ -48,6 +48,11 @@ else
 fi
 
 cd $SCRIPT_DIRECTORY/../$DIRECTORY/src
-terraform init
+if [ "$DIRECTORY" = "subscription-bootstrap" ]; then
+  terraform init
+else
+  STORAGE_ACCOUNT_NAME="devops$(echo $ARM_SUBSCRIPTION_ID | tr -d "-" | cut -c1-18)"
+  terraform init -backend-config="resource_group_name=devops" -backend-config="storage_account_name=$STORAGE_ACCOUNT_NAME" -backend-config="container_name=tfstate" -backend-config="key=$DIRECTORY"
+fi
 
 terraform $COMMAND
