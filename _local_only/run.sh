@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # #############################################################################
-# Validate Inputs
+# Run Terraform Command Against Specified Directory
 # #############################################################################
 # <directory> <command> [command args...]
 #
@@ -9,6 +9,8 @@
 # command: apply, destroy, validate, or graph
 # command args (optional): one or more arguments to be passed to command
 # #############################################################################
+
+# Validate Input Count
 if [ "$#" -lt 2 ]; then
     echo "Illegal number of parameters; 2 or more expected."
     echo ""

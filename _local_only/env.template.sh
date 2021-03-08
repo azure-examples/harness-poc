@@ -8,5 +8,18 @@ export ARM_CLIENT_SECRET=
 
 # Explicit Terraform Inputs
 export TF_VAR_ARM_SUBSCRIPTION_ID=
-export TF_LOG_PATH=terraform.log
-export TF_LOG=TRACE
+
+# Explicit Terraform Inputs for network
+export TF_VAR_region=
+export TF_VAR_shared_key=
+export TF_VAR_gateway_address=
+export TF_VAR_gateway_address_space=
+export TF_VAR_asn=
+export TF_VAR_bgp_peering_address=
+export TF_VAR_vnet_address_space=
+export TF_VAR_private_subnet_address_prefixes=
+export TF_VAR_gateway_address_prefixes=
+
+# Uncomment to Enable Debugging
+# export TF_LOG_PATH=terraform.log
+# export TF_LOG=TRACE
