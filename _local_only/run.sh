@@ -55,4 +55,6 @@ else
   terraform init -backend-config="resource_group_name=devops" -backend-config="storage_account_name=$STORAGE_ACCOUNT_NAME" -backend-config="container_name=tfstate" -backend-config="key=$DIRECTORY"
 fi
 
+terraform workspace select $ARM_SUBSCRIPTION_ID || terraform workspace new $ARM_SUBSCRIPTION_ID
+
 terraform $COMMAND
